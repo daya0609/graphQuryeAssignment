@@ -1,0 +1,32 @@
+# Sample GraphQL Queries for Testing
+
+# 1️⃣ Get customer spending analytics
+query GetCustomerSpending {
+  getCustomerSpending(customerId: "<PUT_CUSTOMER_ID_HERE>") {
+    customerId
+    totalSpent
+    averageOrderValue
+    lastOrderDate
+  }
+}
+
+# 2️⃣ Get top selling products
+query GetTopSellingProducts {
+  getTopSellingProducts(limit: 3) {
+    productId
+    name
+    totalSold
+  }
+}
+
+# 3️⃣ Get sales analytics for a date range
+query GetSalesAnalytics {
+  getSalesAnalytics(startDate: "2024-01-01", endDate: "2024-12-31") {
+    totalRevenue
+    completedOrders
+    categoryBreakdown {
+      category
+      revenue
+    }
+  }
+}
